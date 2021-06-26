@@ -11,6 +11,7 @@ const multer = require('multer');
 dotenv.config();
 app.use(express.json());
 
+const port = process.env.PORT || 80;
 
 mongoose
   .connect(process.env.MONGOURL, {
@@ -40,6 +41,6 @@ app.use('/api/users', userRoute);
 app.use('/api/posts', postRoute);
 app.use('/api/categories', categoryRoute);
 
-app.listen('5000', () => {
+app.listen(port, () => {
   console.log('Backend is running');
 });
