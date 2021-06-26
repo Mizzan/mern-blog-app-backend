@@ -12,9 +12,10 @@ dotenv.config();
 app.use(express.json());
 
 const port = process.env.PORT || 80;
+const uri = `mongodb+srv://blogMizan:blogMizan@cluster0.yk7ln.mongodb.net/blog?retryWrites=true&w=majority`
 
 mongoose
-  .connect(process.env.MONGOURL, {
+  .connect(uri, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
